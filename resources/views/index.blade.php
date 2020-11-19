@@ -15,12 +15,46 @@
     <main id="indexMainBanner">
       <div class="upperBanner">
         <img id="upperBannerLogo" src="img/linkedInLogo.png" alt="">
-          <h1 id="upperBannerText">Main banner text here Pack my box with five dozen liquor jugs <a href="#bannertest"><br>&darr;</a></h1>
+          <h1 id="upperBannerText">Main banner text here Pack my box with five dozen liquor jugs <a href="#about"><br>&darr;</a></h1>
       </div>
     </main>
-    <main id="bannertest" class="bannertest" style="background-color:red;">
+    <main id="about" class="Main">
+      <div class="aboutInfo">
+        <h3>Pack my box with five dozen liquor jugs</h3>
+          <p>Pack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugs</p>
+      </div>
+      <div class="aboutInfo">
+        <h3>Pack my box with five dozen liquor jugs</h3>
+          <p>Pack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugs</p>
+      </div>
+      <div class="aboutInfo">
+        <h3>Pack my box with five dozen liquor jugs</h3>
+          <p>Pack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugs</p>
+      </div>
     </main>
-    <main class="bannertest">
+    <main id="stack" class="Main">
+        <div class="mainText">
+          <h3>Pack my box with five dozen liquor jugs</h3>
+          <h1>Pack my box with five dozen liquor jugs</h1>
+        </div>
+      <div class="aboutInfo">
+          <img src="img/linkedInLogo.png" alt="icon">
+        <h3>Pack my box with five dozen liquor jugs</h3>
+          <p>Pack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugs</p>
+      </div>
+      <div class="aboutInfo">
+          <img src="img/linkedInLogo.png" alt="icon">
+        <h3>Pack my box with five dozen liquor jugs</h3>
+          <p>Pack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugs</p>
+      </div>
+      <div class="aboutInfo">
+          <img src="img/linkedInLogo.png" alt="icon">
+        <h3>Pack my box with five dozen liquor jugs</h3>
+          <p>Pack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugsPack my box with five dozen liquor jugs</p>
+      </div>
+    </main>
+    <main id="promotion" class="Main">
+      
     </main>
   </body>
 </html>
