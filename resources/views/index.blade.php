@@ -13,13 +13,14 @@
         </nav>
      </header>
     <main id="indexMainBanner">
-      <img id="indexMainBannerBG" class="banner" src="img/indexMainBanner.jpeg" alt="banner">
       <div class="upperBanner">
         <img id="upperBannerLogo" src="img/linkedInLogo.png" alt="">
-          <a href="#bannertest"><h1 id="upperBannerText">Main banner text here Pack my box with five dozen liquor jugs <br>&darr;</h1></a>
+          <h1 id="upperBannerText">Main banner text here Pack my box with five dozen liquor jugs <a href="#bannertest"><br>&darr;</a></h1>
       </div>
     </main>
-    <main id="bannertest">
+    <main id="bannertest" class="bannertest" style="background-color:red;">
+    </main>
+    <main class="bannertest">
     </main>
   </body>
 </html>
