@@ -4,7 +4,25 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  transition: 0.5s;
+  /* transition: 0.5s; */
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  visibility: visible;
+}
+
+::-webkit-scrollbar-track {
+  border: none;
+  border-radius: 0px;
+  background-color: #5a0c5a !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(224, 31, 224) !important;
+  border: 0px;
+  border-radius: 9px;
 }
 
 *:focus{
@@ -69,13 +87,11 @@ nav {
   padding: 5px 20px;
   background-color: inherit;
   border: none;
-  border-left: 1px solid black;
   font-size: 1rem;
 }
 
 #loginButton:hover{
   cursor: pointer;
-  
 }
 
 #loginBox{
