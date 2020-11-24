@@ -8,19 +8,19 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   visibility: visible;
 }
 
 ::-webkit-scrollbar-track {
   border: none;
   border-radius: 0px;
-  background-color: #5a0c5a !important;
+  background-color: #000066 !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(224, 31, 224) !important;
+  background-color: #4d4dff !important;
   border: 0px;
   border-radius: 9px;
 }
@@ -122,6 +122,8 @@ form {
   height: 70vh;
   width: 40%;
   z-index: 4;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .closeButton{
@@ -177,10 +179,6 @@ form {
   width: 80%;
   margin: 10px auto;
   border: solid 1px #000;
-}
-
-.loginFormBox{
-  text-align: center;
 }
 
 .loginBoxLogo{
