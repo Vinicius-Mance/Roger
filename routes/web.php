@@ -18,3 +18,5 @@ use App\Http\Controllers\indexController;
 // });
 
 Route::get('/', [indexController::class, 'index']);
+
+Route::post('/loginUser', [UserController::class, 'registerUser']);

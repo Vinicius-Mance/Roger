@@ -12,17 +12,30 @@
           <a target="_blank" href="https://www.linkedin.com/in/rogério-rodrigues-86608812"><img id="logo" class="headerText" src="img/linkedInLogo.png" alt="linkedin"></a>
           <button id="loginButton" type="button">Login</button>
           <div id="loginBox">
-            <form>
+            <form action="/loginUser" method="post">
             @csrf
-              <div class="loginFormBox">
+              <div id="loginFormBox" class="loginFormBox">
                 <button type="button" id="closeLoginButton" class="closeButton">Fechar</button>
                 <img class="loginBoxLogo" src="img/linkedInLogo.png" alt="logo">
                 <input class="loginInput" type="email" name="emailUserLogin" value="{{old('emailUserLogin')}}" placeholder="Email">
                 <input class="loginInput" type="password" name="passwordUserLogin" value="{{old("passwordUserLogin")}}" placeholder="Senha">
-                <button class="primaryButton" type="submit">Entrar</button>
+                <button class="primaryButton" id="submitLoginButton" type="submit">Entrar</button>
                   <hr>
                   <span>Não tem uma conta?</span>
-                  <button class="primaryButton" type="button">Cadastre-se</button>
+                  <button class="primaryButton" id="showRegisterButton" type="button">Cadastre-se</button>
+              </div>
+            </form>
+            {{--//////////////////////////////////////////////////////--}}
+            <form action="/registerUser" method="post">
+            @csrf
+              <div class="registerFormBox">
+                <button type="button" id="closeRegisterButton" class="closeButton">Fechar</button>
+                <input class="loginInput" type="email" name="emailUserRegister" value="{{old('emailUserRegister')}}" placeholder="Email">
+                <input class="loginInput" type="password" name="passwordUserRegister" value="{{old("passwordUserRegister")}}" placeholder="Senha">
+                <button class="primaryButton" id="submitRegisterButton" type="submit">Entrar</button>
+                  <hr>
+                  <span>Não tem uma conta?</span>
+                  <button class="primaryButton" id="showRegisterButton" type="button">Cadastre-se</button>
               </div>
             </form>
           </div>
