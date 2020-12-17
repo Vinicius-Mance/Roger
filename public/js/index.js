@@ -22,18 +22,7 @@ const toggleLoginBox = () =>{
   }
 }
 
-let showRegisterButton = document.getElementById('showRegisterButton');
-showRegisterButton.onclick = function(){toggleRegisterBox();}
-let loginFormBox = document.getElementById('loginFormBox');
-
-const toggleRegisterBox = () => {
-  
-}
-
-
-
 let submitLoginButton = document.getElementById('submitLoginButton');
-
 submitLoginButton.onclick = function(e){e.preventDefault();};
 
 //////////////////////////////////////////
