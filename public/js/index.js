@@ -51,5 +51,6 @@ const toggleRegisterBox = () =>{
 }
 
 let switchRegisterButton = document.getElementById('switchRegisterButton');
+switchRegisterButton.onclick = function() {toggleLoginBox();toggleRegisterBox();}
 let submitRegisterButton = document.getElementById('submitRegisterButton');
 submitRegisterButton.onclick = function(e){e.preventDefault();};

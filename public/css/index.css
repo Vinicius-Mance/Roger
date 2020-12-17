@@ -181,7 +181,7 @@ form {
   color: #000;
 }
 
-.loginFormBox hr{
+.loginFormBox hr, .registerFormBox hr{
   width: 80%;
   margin: 10px auto;
   border: solid 1px #000;
