@@ -14,7 +14,7 @@
           <div id="loginBox">
             <form action="/loginUser" method="post">
             @csrf
-              <div id="loginFormBox" class="loginFormBox">
+              <div class="loginFormBox">
                 <button type="button" id="closeLoginButton" class="closeButton">Fechar</button>
                 <img class="loginBoxLogo" src="img/linkedInLogo.png" alt="logo">
                 <input class="loginInput" type="email" name="emailUserLogin" value="{{old('emailUserLogin')}}" placeholder="Email">
@@ -25,17 +25,22 @@
                   <button class="primaryButton" id="showRegisterButton" type="button">Cadastre-se</button>
               </div>
             </form>
+          </div>
             {{--//////////////////////////////////////////////////////--}}
+          <div id="registerBox">
             <form action="/registerUser" method="post">
-            @csrf
+              @csrf
               <div class="registerFormBox">
                 <button type="button" id="closeRegisterButton" class="closeButton">Fechar</button>
-                <input class="loginInput" type="email" name="emailUserRegister" value="{{old('emailUserRegister')}}" placeholder="Email">
-                <input class="loginInput" type="password" name="passwordUserRegister" value="{{old("passwordUserRegister")}}" placeholder="Senha">
+                <h2>Faça seu cadastro</h2>
+                <input class="loginInput" type="text" name="" value="" placeholder="Nome">
+                <input class="loginInput" type="email" name="" value="" placeholder="E-mail">
+                <input class="loginInput" type="password" name="" value="" placeholder="Senha">
+                <input class="loginInput" type="password" name="" value="" placeholder="Repita sua senha">
                 <button class="primaryButton" id="submitRegisterButton" type="submit">Entrar</button>
-                  <hr>
-                  <span>Não tem uma conta?</span>
-                  <button class="primaryButton" id="showRegisterButton" type="button">Cadastre-se</button>
+                <hr>
+                <span>Lembrou da sua conta?</span>
+                <button class="primaryButton" id="switchRegisterButton" type="button">Faça login</button>
               </div>
             </form>
           </div>

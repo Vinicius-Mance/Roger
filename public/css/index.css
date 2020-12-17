@@ -90,11 +90,11 @@ nav {
   font-size: 1rem;
 }
 
-#loginButton:hover{
+#loginButton:hover, #registerBox:hover{
   cursor: pointer;
 }
 
-#loginBox {
+#loginBox, #registerBox {
   display: none;
   position: fixed;
   z-index: 2;
@@ -113,19 +113,23 @@ form {
   z-index: 3;
 }
 
-.loginFormBox{
+.loginFormBox,.registerFormBox{
   padding: 5px;
   border-radius: 10px;
   background-color: white;
   position: relative;
-  left: 30%;
-  right: 30%;
+  left: 25%;
+  right: 25%;
   top: 10vh;
   height: 70vh;
-  width: 40%;
+  width: 50%;
   z-index: 4;
   text-align: center;
   font-size: 1rem;
+}
+
+.registerFormBox h2 {
+  margin: 20px 0;
 }
 
 .closeButton{
@@ -183,7 +187,7 @@ form {
   border: solid 1px #000;
 }
 
-.loginBoxLogo{
+.loginBoxLogo, .registerBoxLogo{
   width: 25%;
   display: block;
   margin: 25px auto 5px auto;
