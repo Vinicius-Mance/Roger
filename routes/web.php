@@ -21,4 +21,6 @@ Route::get('/', [indexController::class, 'index']);
 
 Route::post('/registerUser', [UserController::class, 'registerUser']);
 
-Route::post('/registerUser', [UserController::class, 'loginUser']);
+Route::post('/loginUser', [UserController::class, 'loginUser']);
+
+Route::get('/logOffUser', [UserController::class, 'logOffUser']);

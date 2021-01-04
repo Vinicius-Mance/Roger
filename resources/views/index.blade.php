@@ -10,7 +10,12 @@
         <nav> <a href="/" id="mainHeaderText" class="headerText">Main header text</a>
           <a href="/" class="headerText">&laquo; Secondary header text</a>
           <a target="_blank" href="https://www.linkedin.com/in/rogério-rodrigues-86608812"><img id="logo" class="headerText" src="img/linkedInLogo.png" alt="linkedin"></a>
+          @auth
+          <a href="/logOffUser"><button id="logOffButton" type="button">LogOff</button></a>
+          @endauth
+          @guest
           <button id="loginButton" type="button">Login</button>
+          @endguest
           <div id="loginBox">
             <form action="/loginUser" method="post">
             @csrf
