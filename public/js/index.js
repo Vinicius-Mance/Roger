@@ -23,7 +23,7 @@ const toggleLoginBox = () =>{
 }
 
 let submitLoginButton = document.getElementById('submitLoginButton');
-submitLoginButton.onclick = function(e){e.preventDefault();};
+// submitLoginButton.onclick = function(e){e.preventDefault();};
 
 //////////////////////////////////////////
 
@@ -52,5 +52,6 @@ const toggleRegisterBox = () =>{
 
 let switchRegisterButton = document.getElementById('switchRegisterButton');
 switchRegisterButton.onclick = function() {toggleLoginBox();toggleRegisterBox();}
+
 let submitRegisterButton = document.getElementById('submitRegisterButton');
-submitRegisterButton.onclick = function(e){e.preventDefault();};
+// submitRegisterButton.onclick = function(e){e.preventDefault();};

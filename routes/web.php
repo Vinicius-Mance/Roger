@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +13,12 @@ use App\Http\Controllers\indexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
 Route::get('/', [indexController::class, 'index']);
 
-Route::post('/loginUser', [UserController::class, 'registerUser']);
+Route::post('/registerUser', [UserController::class, 'registerUser']);
+
+Route::post('/registerUser', [UserController::class, 'loginUser']);

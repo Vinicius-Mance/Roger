@@ -17,8 +17,8 @@
               <div class="loginFormBox">
                 <button type="button" id="closeLoginButton" class="closeButton">Fechar</button>
                 <img class="loginBoxLogo" src="img/linkedInLogo.png" alt="logo">
-                <input class="loginInput" type="email" name="emailUserLogin" value="{{old('emailUserLogin')}}" placeholder="Email">
-                <input class="loginInput" type="password" name="passwordUserLogin" value="{{old("passwordUserLogin")}}" placeholder="Senha">
+                <input class="loginInput" type="email" name="emailUserLogin" value="" placeholder="Email">
+                <input class="loginInput" type="password" name="passwordUserLogin" value="" placeholder="Senha">
                 <button class="primaryButton" id="submitLoginButton" type="submit">Entrar</button>
                   <hr>
                   <span>Não tem uma conta?</span>
@@ -33,11 +33,11 @@
               <div class="registerFormBox">
                 <button type="button" id="closeRegisterButton" class="closeButton">Fechar</button>
                 <h2>Faça seu cadastro</h2>
-                <input class="loginInput" type="text" name="" value="" placeholder="Nome">
-                <input class="loginInput" type="email" name="" value="" placeholder="E-mail">
-                <input class="loginInput" type="password" name="" value="" placeholder="Senha">
-                <input class="loginInput" type="password" name="" value="" placeholder="Repita sua senha">
-                <button class="primaryButton" id="submitRegisterButton" type="submit">Entrar</button>
+                <input class="loginInput" type="text" name="registerName" value="" placeholder="Nome">
+                <input class="loginInput" type="email" name="registerEmail" value="" placeholder="E-mail">
+                <input class="loginInput" type="password" name="registerPassword" value="" placeholder="Senha">
+                <input class="loginInput" type="password" name="registerPasswordConfirmation" value="" placeholder="Repita sua senha">
+                <button class="primaryButton" id="submitRegisterButton" type="submit">Cadastrar</button>
                 <hr>
                 <span>Lembrou da sua conta?</span>
                 <button class="primaryButton" id="switchRegisterButton" type="button">Faça login</button>
