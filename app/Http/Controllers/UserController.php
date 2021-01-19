@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
-    function registerUser(Request $request){
+    public function registerUser(Request $request){
       if (Auth::check()) {
         echo "volta patrão";
         die();
@@ -26,7 +26,7 @@ class UserController extends Controller
       return redirect('/');
     }
 
-    function loginUser(Request $request){
+    public function loginUser(Request $request){
         if (Auth::check()) {
           return redirect('/');
         }
@@ -36,7 +36,7 @@ class UserController extends Controller
           }
       }
 
-      function logOffUser(Request $request){
+      public function logOffUser(Request $request){
         Auth::logout();
 
         $request->session()->invalidate();
@@ -45,5 +45,15 @@ class UserController extends Controller
 
         return redirect('/');
 
+      }
+
+      public function getAllUsers(){
+        $users["users"] = User::all();
+        return $users;
+      }
+
+      public function getUserById($id){
+        $user["user"] = User::findOrFail($id);
+        return $user;
       }
 }

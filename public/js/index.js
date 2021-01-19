@@ -54,4 +54,27 @@ let switchRegisterButton = document.getElementById('switchRegisterButton');
 switchRegisterButton.onclick = function() {toggleLoginBox();toggleRegisterBox();}
 
 let submitRegisterButton = document.getElementById('submitRegisterButton');
-// submitRegisterButton.onclick = function(e){e.preventDefault();};
+submitRegisterButton.onclick = function(e){e.preventDefault();};
+
+let url = "api/getAllUsers";
+const callUserInfo = () => {
+  fetch(url)
+    .then(userData => {
+      if (!userData.ok) {
+        throw new Error(`HTTP error, status ${userData.status}`);
+      }
+        return userData.json();
+  }).then(({users}) => {
+    console.log(users);
+    validateUserLogin(users);
+  })
+    .catch(error =>{
+    console.log(error.message);
+  });
+}
+callUserInfo();
+
+
+validateUserLogin = user => {
+  
+}

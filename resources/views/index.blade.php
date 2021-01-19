@@ -22,11 +22,13 @@
               <div class="loginFormBox">
                 <button type="button" id="closeLoginButton" class="closeButton">Fechar</button>
                 <img class="loginBoxLogo" src="img/linkedInLogo.png" alt="logo">
-                <input class="loginInput" type="email" name="emailUserLogin" value="" placeholder="Email">
-                <input class="loginInput" type="password" name="passwordUserLogin" value="" placeholder="Senha">
+                <input id="emailUserLogin" class="loginInput" type="email" name="emailUserLogin" value="" placeholder="Email">
+                  <span class="errorValidationMessage"></span>
+                <input id="passwordUserLogin" class="loginInput" type="password" name="passwordUserLogin" value="" placeholder="Senha">
+                  <span class="errorValidationMessage"></span>
                 <button class="primaryButton" id="submitLoginButton" type="submit">Entrar</button>
                   <hr>
-                  <span>Não tem uma conta?</span>
+                    <span>Não tem uma conta?</span>
                   <button class="primaryButton" id="showRegisterButton" type="button">Cadastre-se</button>
               </div>
             </form>
@@ -39,9 +41,13 @@
                 <button type="button" id="closeRegisterButton" class="closeButton">Fechar</button>
                 <h2>Faça seu cadastro</h2>
                 <input class="loginInput" type="text" name="registerName" value="" placeholder="Nome">
+                <span class="errorValidationMessage"></span>
                 <input class="loginInput" type="email" name="registerEmail" value="" placeholder="E-mail">
+                <span class="errorValidationMessage"></span>
                 <input class="loginInput" type="password" name="registerPassword" value="" placeholder="Senha">
+                <span class="errorValidationMessage"></span>
                 <input class="loginInput" type="password" name="registerPasswordConfirmation" value="" placeholder="Repita sua senha">
+                <span class="errorValidationMessage"></span>
                 <button class="primaryButton" id="submitRegisterButton" type="submit">Cadastrar</button>
                 <hr>
                 <span>Lembrou da sua conta?</span>
