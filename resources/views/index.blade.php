@@ -14,47 +14,8 @@
           <a href="/logOffUser"><button id="logOffButton" type="button">LogOff</button></a>
           @endauth
           @guest
-          <button id="loginButton" type="button">Login</button>
+          <button id="loginButton" type="button"><a href="/login">Login</a></button>
           @endguest
-          <div id="loginBox">
-            <form action="/loginUser" method="post">
-            @csrf
-              <div class="loginFormBox">
-                <button type="button" id="closeLoginButton" class="closeButton">Fechar</button>
-                <img class="loginBoxLogo" src="img/linkedInLogo.png" alt="logo">
-                <input id="emailUserLogin" class="loginInput" type="email" name="emailUserLogin" value="" placeholder="Email">
-                  <span class="errorValidationMessage"></span>
-                <input id="passwordUserLogin" class="loginInput" type="password" name="passwordUserLogin" value="" placeholder="Senha">
-                  <span class="errorValidationMessage"></span>
-                <button class="primaryButton" id="submitLoginButton" type="submit">Entrar</button>
-                  <hr>
-                    <span>Não tem uma conta?</span>
-                  <button class="primaryButton" id="showRegisterButton" type="button">Cadastre-se</button>
-              </div>
-            </form>
-          </div>
-            {{--//////////////////////////////////////////////////////--}}
-          <div id="registerBox">
-            <form action="/registerUser" method="post">
-              @csrf
-              <div class="registerFormBox">
-                <button type="button" id="closeRegisterButton" class="closeButton">Fechar</button>
-                <h2>Faça seu cadastro</h2>
-                <input class="loginInput" type="text" name="registerName" value="" placeholder="Nome">
-                <span class="errorValidationMessage"></span>
-                <input class="loginInput" type="email" name="registerEmail" value="" placeholder="E-mail">
-                <span class="errorValidationMessage"></span>
-                <input class="loginInput" type="password" name="registerPassword" value="" placeholder="Senha">
-                <span class="errorValidationMessage"></span>
-                <input class="loginInput" type="password" name="registerPasswordConfirmation" value="" placeholder="Repita sua senha">
-                <span class="errorValidationMessage"></span>
-                <button class="primaryButton" id="submitRegisterButton" type="submit">Cadastrar</button>
-                <hr>
-                <span>Lembrou da sua conta?</span>
-                <button class="primaryButton" id="switchRegisterButton" type="button">Faça login</button>
-              </div>
-            </form>
-          </div>
         </nav>
      </header>
     <main id="indexMainBanner">
@@ -84,8 +45,5 @@
       </div>
       @endfor
     </main>
-  <script src="js/index.js">
-
-  </script>
   </body>
 </html>

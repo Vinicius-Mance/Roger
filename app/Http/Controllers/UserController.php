@@ -6,37 +6,66 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use \Validator;
+
 class UserController extends Controller
 {
     public function registerUser(Request $request){
-      if (Auth::check()) {
-        echo "volta patrão";
-        die();
-      }
       $validacoes = $request->validate([
         'registerName' => 'required|min:6',
         'registerEmail' => 'required|email|unique:users,email',
         'registerPassword' => 'required|lte:registerPasswordConfirmation|min:6'
       ]);
+
       $user = new User();
       $user->name = $request->registerName;
       $user->email = $request->registerEmail;
       $user->password = Hash::make($request->registerPassword);
       $user->save();
+
+      Auth::attempt($user);
       return redirect('/');
     }
 
-    public function loginUser(Request $request){
-        if (Auth::check()) {
-          return redirect('/');
-        }
-        if (Auth::attempt(["email"=>$request->emailUserLogin, "password"=>$request->passwordUserLogin], true))
-          {
-            return redirect('/');
-          }
+    public function loginUser(Request $request) {
+
+      if (Auth::check()) {
+        return redirect('/');
       }
 
-      public function logOffUser(Request $request){
+        $credentials = [
+          'email' => $request->emailUserLogin,
+          'password' => $request->passwordUserLogin
+        ];
+
+        $user = User::where('email', $request->emailUserLogin)->first();
+
+        if (Auth::attempt($credentials, true))
+        {
+
+          return redirect('/');
+
+        } elseif ($user) {
+
+          $validation = $request->validate([
+            'passwordUserLogin'=>'email|numeric'
+          ]);
+
+        } else {
+
+          $validation = $request->validate([
+            'emailUserLogin'=>'numeric'
+          ]);
+
+        }
+    }
+
+    public function logOffUser(Request $request){
+
+      if (!Auth::check()) {
+        return redirect('/');
+      }
+
         Auth::logout();
 
         $request->session()->invalidate();
@@ -44,7 +73,6 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
-
       }
 
       public function getAllUsers(){
@@ -52,8 +80,4 @@ class UserController extends Controller
         return $users;
       }
 
-      public function getUserById($id){
-        $user["user"] = User::findOrFail($id);
-        return $user;
-      }
 }
