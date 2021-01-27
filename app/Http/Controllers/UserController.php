@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use \Validator;
 
 class UserController extends Controller
 {
+
     public function registerUser(Request $request){
+
+      if (Auth::check()) {
+        return redirect('/');
+      }
+
       $validacoes = $request->validate([
-        'registerName' => 'required|min:6',
+        'registerName' => 'required|min:6|regex:/^[a-zA-Z0-9\s]+$/',
         'registerEmail' => 'required|email|unique:users,email',
         'registerPassword' => 'required|lte:registerPasswordConfirmation|min:6'
       ]);
@@ -23,8 +28,16 @@ class UserController extends Controller
       $user->password = Hash::make($request->registerPassword);
       $user->save();
 
-      Auth::attempt($user);
-      return redirect('/');
+      $credentials = [
+        'email' => $request->registerEmail,
+        'password' => $request->registerPassword
+      ];
+
+      if (Auth::attempt($credentials, true))
+      {
+        return redirect('/');
+      }
+      return redirect('/login');
     }
 
     public function loginUser(Request $request) {
@@ -42,40 +55,32 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials, true))
         {
-
           return redirect('/');
-
         } elseif ($user) {
-
           $validation = $request->validate([
             'passwordUserLogin'=>'email|numeric'
           ]);
-
         } else {
-
           $validation = $request->validate([
             'emailUserLogin'=>'numeric'
           ]);
-
         }
     }
 
     public function logOffUser(Request $request){
 
       if (!Auth::check()) {
-        return redirect('/');
+        return redirect('/login');
       }
 
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
+
       }
 
-      public function getAllUsers(){
+      public function getAllUsers() {
         $users["users"] = User::all();
         return $users;
       }
