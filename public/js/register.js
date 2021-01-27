@@ -69,10 +69,10 @@ validateUserRegister = users => {
   let passwordConfirmationOk = true;
 
     if (registerName.value.length < 6) {
-      registerNameError.innerHTML = "Use 6 ou mais caracteres";
+      registerNameError.innerHTML = "Use 6 or more characters";
       nameOk = false;
     } else if (registerName.value == /^[a-zA-Z0-9\s]+$/) {
-      registerNameError.innerHTML = "Nome só pode conter letras e números";
+      registerNameError.innerHTML = "Name can't have special characters";
       nameOk = false;
     } else {
       registerNameError.innerHTML = "";
@@ -81,13 +81,13 @@ validateUserRegister = users => {
     for (var i = 0; i < users.length; i++) {
 
       if (users[i].email == registerEmail.value) {
-        registerEmailError.innerHTML = "Email já registrado";
+        registerEmailError.innerHTML = "Email already registered";
         emailOk = false;
         break;
       } else if (registerEmail.value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
         registerEmailError.innerHTML = "";
       } else {
-        registerEmailError.innerHTML = "Insira um email válido";
+        registerEmailError.innerHTML = "Insert a valid email";
         emailOk = false;
         break;
       }
@@ -95,17 +95,17 @@ validateUserRegister = users => {
     }
 
     if (registerPassword.value < 6) {
-      registerPasswordError.innerHTML = "Use 6 ou mais caracteres";
+      registerPasswordError.innerHTML = "Use 6 or more characters";
       passwordOk = false;
     } else if (registerPassword.value == /^[a-zA-Z0-9\s]+$/) {
-      registerPasswordError.innerHTML = "Senha só pode conter letras e números";
+      registerPasswordError.innerHTML = "Name can't have special characters";
       passwordOk = false;
     } else {
       registerPasswordError.innerHTML = "";
     }
 
     if (registerPasswordConfirmation.value != registerPassword.value) {
-      registerPasswordConfirmationError.innerHTML = "Senhas não coincidem";
+      registerPasswordConfirmationError.innerHTML = "Passwords don't match";
       passwordConfirmationOk = false;
     } else {
       registerPasswordConfirmationError.innerHTML = "";
