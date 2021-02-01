@@ -16,6 +16,9 @@ class UserController extends Controller
         return redirect('/');
       }
 
+      // $request->userProfilePic->store('img', 'public');
+      // return "uploaded";
+
       $validacoes = $request->validate([
         'registerName' => 'required|min:6|regex:/^[a-zA-Z0-9\s]+$/',
         'registerEmail' => 'required|email|unique:users,email',

@@ -29,7 +29,7 @@ let switchRegisterButton = document.getElementById('switchRegisterButton');
 switchRegisterButton.onclick = function() {toggleLoginBox();}
 
 let submitRegisterButton = document.getElementById('submitRegisterButton');
-submitRegisterButton.onclick = function(e){e.preventDefault(); getUserValitadionInfo();};
+// submitRegisterButton.onclick = function(e){e.preventDefault(); getUserValitadionInfo();};
 
 
 const getUserValitadionInfo = () => {
@@ -68,7 +68,7 @@ validateUserRegister = users => {
   let passwordOk = true;
   let passwordConfirmationOk = true;
 
-    if (registerName.value.length < 6) {
+    if (registerName.value.length <= 6) {
       registerNameError.innerHTML = "Use 6 or more characters";
       nameOk = false;
     } else if (registerName.value == /^[a-zA-Z0-9\s]+$/) {
@@ -115,4 +115,62 @@ validateUserRegister = users => {
       registerForm.submit();
     }
 
+}
+
+
+let userProfilePic = document.getElementById('userProfilePic');
+let userProfilePicSelector = document.getElementById("userProfilePicSelector");
+
+userProfilePicSelector.onchange = evt => {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      userProfilePic.src = e.target.result;
+    };
+    reader.readAsDataURL(evt.target.files[0]);
+};
+
+function checkFileDetails() {
+  var fi = document.getElementById('userProfilePicSelector');
+    if (fi.files.length > 0) {
+
+      for (var i = 0; i <= fi.files.length - 1; i++) {
+        var fileName, fileExtension, fileSize, fileType, dateModified;
+        fileName = fi.files.item(i).name;
+        fileExtension = fileName.replace(/^.*\./, '');
+
+        if (fileExtension == 'png' || fileExtension == 'jpg' || fileExtension == 'jpeg') {
+          readImageFile(fi.files.item(i));
+          console.log("bruh");// GET IMAGE INFO USING fileReader().
+        } else {
+          console.log("potato");
+          fileSize = fi.files.item(i).size;
+          fileType = fi.files.item(i).type;
+          dateModified = fi.files.item(i).lastModifiedDate;
+        }
+      }
+
+            // GET THE IMAGE WIDTH AND HEIGHT USING fileReader() API.
+      function readImageFile(file) {
+        var reader = new FileReader(); // CREATE AN NEW INSTANCE.
+          reader.onload = function (e) {
+
+          var img = new Image();
+            img.src = e.target.result;
+
+          img.onload = function () {
+            var w = this.width;
+            var h = this.height;
+
+          document.getElementById('fileInfo').innerHTML =
+            document.getElementById('fileInfo').innerHTML + '<br /> ' +
+              'Name: <b>' + file.name + '</b> <br />' +
+              'File Extension: <b>' + fileExtension + '</b> <br />' +
+              'Width: <b>' + w + '</b> <br />' +
+              'Height: <b>' + h + '</b> <br />' +
+              'Type: <b>' + file.type + '</b> <br />'
+          }
+      };
+        reader.readAsDataURL(file);
+      }
+  }
 }
