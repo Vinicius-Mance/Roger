@@ -141,7 +141,7 @@ function checkFileDetails() {
         if (fileExtension == 'png' || fileExtension == 'jpg' || fileExtension == 'jpeg') {
           readImageFile(fi.files.item(i));
           console.log("bruh");// GET IMAGE INFO USING fileReader().
-        } else {
+        } else { 
           console.log("potato");
           fileSize = fi.files.item(i).size;
           fileType = fi.files.item(i).type;
